@@ -1,0 +1,24 @@
+[
+  {
+    "id": "CWE-79",
+    "name": "Cross-Site Scripting",
+    "severity": "high",
+    "description": "Unsanitized user input rendered in HTML output.",
+    "indicators": ["innerHTML", "dangerouslySetInnerHTML", "render_template_string"]
+  },
+  {
+    "id": "CWE-89",
+    "name": "SQL Injection",
+    "severity": "critical",
+    "description": "User input concatenated directly into SQL queries without parameterization.",
+    "indicators": ["SELECT * FROM", "execute(query)", "f\"SELECT"]
+  },
+  {
+    "id": "CWE-22",
+    "name": "Path Traversal",
+    "severity": "high",
+    "description": "File paths constructed from user input without canonicalization.",
+    "indicators": ["../", "send_file", "open(path"]
+  }
+]
+

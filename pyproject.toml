@@ -1,0 +1,14 @@
+[project]
+name = "parallel-patch"
+version = "0.1.0"
+description = "Parallel agent-based vulnerability scanner MVP"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2",
+]
+
+[project.scripts]
+parallel-patch = "parallel_patch.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,543 @@
+[
+  {
+    "id": "CWE-20",
+    "name": "Improper Input Validation",
+    "severity": "critical",
+    "description": "The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly. Input validation is a frequently-used technique for checking potentially dangerous inputs in order to ensure that the inputs are safe for processing within the code, or when communicating with other components. Input can consist of: raw data - strings, numbers, parameters, file contents, etc. metadata - information about the raw data, such as headers or size Data can be simple or structured. Structured data can be composed of many nested layers, composed of combinations of metadata and raw data, with other simple or structured data. Many properties of raw data or metadata may need to be valid...",
+    "indicators": [
+      "Improper Input Validation"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 1,
+    "status": "Stable",
+    "weakness_abstraction": "Class",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Often::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-22",
+    "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+    "severity": "critical",
+    "description": "The product uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the product does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory. Many file operations are intended to take place within a restricted directory. By using special elements such as .. and / separators, attackers can escape outside of the restricted location to access files or directories that are elsewhere on the system. One of the most common special elements is the ../ sequence, which in most modern operating systems is interpreted as the parent directory of the current location. This is referred to as relative path traversal. Path traversal also covers the use of absolute pathnames such as /usr/local/bin to access unexpected files. This is referred to as a...",
+    "indicators": [
+      "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "Path Traversal",
+      "Directory traversal",
+      "Path transversal"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 2,
+    "status": "Stable",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-77",
+    "name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+    "severity": "critical",
+    "description": "The product constructs all or part of a command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended command when it is sent to a downstream component. Many protocols and products have their own custom command language. While OS or shell command strings are frequently discovered and targeted, developers may not realize that these other command languages might also be vulnerable to attacks.",
+    "indicators": [
+      "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+      "Command Injection"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 3,
+    "status": "Draft",
+    "weakness_abstraction": "Class",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-78",
+    "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+    "severity": "critical",
+    "description": "The product constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component. This weakness can lead to a vulnerability in environments in which the attacker does not have direct access to the operating system, such as in web applications. Alternately, if the weakness occurs in a privileged program, it could allow the attacker to specify commands that normally would not be accessible, or to call alternate commands with privileges that the attacker does not have. The problem is exacerbated if the compromised process does not follow the principle of least privilege, because the attacker-controlled commands may run with special system privileges that increases the amount...",
+    "indicators": [
+      "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+      "OS Command Injection",
+      "Shell injection",
+      "Shell metacharacters"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 4,
+    "status": "Stable",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Not Technology-Specific",
+      "AI/ML",
+      "Web Server"
+    ]
+  },
+  {
+    "id": "CWE-79",
+    "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+    "severity": "critical",
+    "description": "The product does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. There are many variants of cross-site scripting, characterized by a variety of terms or involving different attack topologies. However, they all indicate the same fundamental weakness: improper neutralization of dangerous input between the adversary and a victim.",
+    "indicators": [
+      "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "Cross-site Scripting",
+      "XSS",
+      "HTML Injection",
+      "Reflected XSS / Non-Persistent XSS / Type 1 XSS",
+      "Stored XSS / Persistent XSS / Type 2 XSS",
+      "DOM-Based XSS / Type 0 XSS",
+      "CSS"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 5,
+    "status": "Stable",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY CLASS:Web Based:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "AI/ML",
+      "Web Based",
+      "Web Server"
+    ]
+  },
+  {
+    "id": "CWE-89",
+    "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+    "severity": "high",
+    "description": "The product constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component. Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data.",
+    "indicators": [
+      "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "SQL Injection",
+      "SQLi"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 6,
+    "status": "Stable",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:SQL:LANGUAGE PREVALENCE:Often::TECHNOLOGY NAME:Database Server:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "SQL",
+      "Database Server"
+    ]
+  },
+  {
+    "id": "CWE-94",
+    "name": "Improper Control of Generation of Code ('Code Injection')",
+    "severity": "high",
+    "description": "The product constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment.",
+    "indicators": [
+      "Improper Control of Generation of Code ('Code Injection')",
+      "Code Injection"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 7,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Interpreted:LANGUAGE PREVALENCE:Sometimes::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Interpreted",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-120",
+    "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+    "severity": "high",
+    "description": "The product copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer.",
+    "indicators": [
+      "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+      "Classic Buffer Overflow",
+      "Unbounded Transfer"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 8,
+    "status": "Incomplete",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Often::LANGUAGE CLASS:Assembly:LANGUAGE PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++",
+      "Assembly"
+    ]
+  },
+  {
+    "id": "CWE-121",
+    "name": "Stack-based Buffer Overflow",
+    "severity": "high",
+    "description": "A stack-based buffer overflow condition is a condition where the buffer being overwritten is allocated on the stack (i.e., is a local variable or, rarely, a parameter to a function).",
+    "indicators": [
+      "Stack-based Buffer Overflow",
+      "Stack Overflow",
+      "Stack Buffer Overflow"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 9,
+    "status": "Draft",
+    "weakness_abstraction": "Variant",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++",
+      "Not Technology-Specific"
+    ]
+  },
+  {
+    "id": "CWE-122",
+    "name": "Heap-based Buffer Overflow",
+    "severity": "high",
+    "description": "A heap overflow condition is a buffer overflow, where the buffer that can be overwritten is allocated in the heap portion of memory, generally meaning that the buffer was allocated using a routine such as malloc().",
+    "indicators": [
+      "Heap-based Buffer Overflow",
+      "Heap Overflow",
+      "Heap Buffer Overflow"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 10,
+    "status": "Draft",
+    "weakness_abstraction": "Variant",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++",
+      "Not Technology-Specific"
+    ]
+  },
+  {
+    "id": "CWE-125",
+    "name": "Out-of-bounds Read",
+    "severity": "high",
+    "description": "The product reads data past the end, or before the beginning, of the intended buffer.",
+    "indicators": [
+      "Out-of-bounds Read",
+      "OOB read"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 11,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:ICS/OT:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++",
+      "ICS/OT"
+    ]
+  },
+  {
+    "id": "CWE-200",
+    "name": "Exposure of Sensitive Information to an Unauthorized Actor",
+    "severity": "high",
+    "description": "The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information. There are many different kinds of mistakes that introduce information exposures. The severity of the error can range widely, depending on the context in which the product operates, the type of sensitive information that is revealed, and the benefits it may provide to an attacker. Some kinds of sensitive information include: private, personal information, such as personal messages, financial data, health records, geographic location, or contact details system status and environment, such as the operating system and installed packages business secrets and intellectual property network status an...",
+    "indicators": [
+      "Exposure of Sensitive Information to an Unauthorized Actor",
+      "Information Disclosure",
+      "Information Leak"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 12,
+    "status": "Draft",
+    "weakness_abstraction": "Class",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY CLASS:Web Based:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY CLASS:Mobile:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Not Technology-Specific",
+      "Web Based",
+      "Mobile"
+    ]
+  },
+  {
+    "id": "CWE-284",
+    "name": "Improper Access Control",
+    "severity": "high",
+    "description": "The product does not restrict or incorrectly restricts access to a resource from an unauthorized actor. Access control involves the use of several protection mechanisms such as: Authentication (proving the identity of an actor) Authorization (ensuring that a given actor can access a resource), and Accountability (tracking of activities that were performed) When any mechanism is not applied or otherwise fails, attackers can compromise the security of the product by gaining privileges, reading sensitive information, executing commands, evading detection, etc. There are two distinct behaviors that can introduce access control weaknesses: Specification: incorrect privileges, permissions, ownership,...",
+    "indicators": [
+      "Improper Access Control",
+      "Authorization"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 13,
+    "status": "Incomplete",
+    "weakness_abstraction": "Pillar",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY CLASS:ICS/OT:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY CLASS:Web Based:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Not Technology-Specific",
+      "ICS/OT",
+      "Web Based"
+    ]
+  },
+  {
+    "id": "CWE-306",
+    "name": "Missing Authentication for Critical Function",
+    "severity": "high",
+    "description": "The product does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources.",
+    "indicators": [
+      "Missing Authentication for Critical Function"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 14,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Cloud Computing:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY CLASS:ICS/OT:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Cloud Computing",
+      "ICS/OT"
+    ]
+  },
+  {
+    "id": "CWE-352",
+    "name": "Cross-Site Request Forgery (CSRF)",
+    "severity": "high",
+    "description": "The web application does not, or cannot, sufficiently verify whether a request was intentionally provided by the user who sent the request, which could have originated from an unauthorized actor.",
+    "indicators": [
+      "Cross-Site Request Forgery (CSRF)",
+      "Session Riding",
+      "Cross Site Reference Forgery",
+      "XSRF",
+      "CSRF"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 15,
+    "status": "Stable",
+    "weakness_abstraction": "Compound",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Web Based:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Web Based",
+      "Web Server"
+    ]
+  },
+  {
+    "id": "CWE-416",
+    "name": "Use After Free",
+    "severity": "medium",
+    "description": "The product reuses or references memory after it has been freed. At some point afterward, the memory may be allocated again and saved in another pointer, while the original pointer references a location somewhere within the new allocation. Any operations using the original pointer are no longer valid because the memory belongs to the code that operates on the new pointer.",
+    "indicators": [
+      "Use After Free",
+      "Dangling pointer",
+      "UAF",
+      "Use-After-Free"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 16,
+    "status": "Stable",
+    "weakness_abstraction": "Variant",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Often::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++"
+    ]
+  },
+  {
+    "id": "CWE-434",
+    "name": "Unrestricted Upload of File with Dangerous Type",
+    "severity": "medium",
+    "description": "The product allows the upload or transfer of dangerous file types that are automatically processed within its environment.",
+    "indicators": [
+      "Unrestricted Upload of File with Dangerous Type",
+      "Unrestricted File Upload"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 17,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE NAME:ASP.NET:LANGUAGE PREVALENCE:Sometimes::LANGUAGE NAME:PHP:LANGUAGE PREVALENCE:Often::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Sometimes::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "ASP.NET",
+      "PHP",
+      "Not Language-Specific",
+      "Web Server",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-476",
+    "name": "NULL Pointer Dereference",
+    "severity": "medium",
+    "description": "The product dereferences a pointer that it expects to be valid but is NULL.",
+    "indicators": [
+      "NULL Pointer Dereference",
+      "NPD",
+      "null deref",
+      "NPE",
+      "nil pointer dereference"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 18,
+    "status": "Stable",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:Java:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:C#:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:Go:LANGUAGE PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "C",
+      "C++",
+      "Java",
+      "C#",
+      "Go"
+    ]
+  },
+  {
+    "id": "CWE-502",
+    "name": "Deserialization of Untrusted Data",
+    "severity": "medium",
+    "description": "The product deserializes untrusted data without sufficiently ensuring that the resulting data will be valid.",
+    "indicators": [
+      "Deserialization of Untrusted Data",
+      "Marshaling/Marshalling, Unmarshaling/Unmarshalling",
+      "Pickling, Unpickling",
+      "PHP Object Injection"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 19,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE NAME:Java:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:Ruby:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:PHP:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:Python:LANGUAGE PREVALENCE:Undetermined::LANGUAGE NAME:JavaScript:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY CLASS:ICS/OT:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Java",
+      "Ruby",
+      "PHP",
+      "Python",
+      "JavaScript",
+      "Not Technology-Specific",
+      "ICS/OT",
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "CWE-639",
+    "name": "Authorization Bypass Through User-Controlled Key",
+    "severity": "medium",
+    "description": "The system's authorization functionality does not prevent one user from gaining access to another user's data or record by modifying the key value identifying the data. Retrieval of a user record occurs in the system based on some key value that is under user control. The key would typically identify a user-related record stored in the system and would be used to lookup that record for presentation to the user. It is likely that an attacker would have to be an authenticated user in the system. However, the authorization process would not properly check the data access operation to ensure that the authenticated user performing the operation has sufficient entitlements to perform the requested data access, hence bypassing any other authorization checks present...",
+    "indicators": [
+      "Authorization Bypass Through User-Controlled Key",
+      "Insecure Direct Object Reference / IDOR",
+      "Broken Object Level Authorization / BOLA",
+      "Horizontal Authorization"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 20,
+    "status": "Incomplete",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific"
+    ]
+  },
+  {
+    "id": "CWE-770",
+    "name": "Allocation of Resources Without Limits or Throttling",
+    "severity": "medium",
+    "description": "The product allocates a reusable resource or group of resources on behalf of an actor without imposing any intended restrictions on the size or number of resources that can be allocated.",
+    "indicators": [
+      "Allocation of Resources Without Limits or Throttling"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 21,
+    "status": "Incomplete",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Not Technology-Specific"
+    ]
+  },
+  {
+    "id": "CWE-787",
+    "name": "Out-of-bounds Write",
+    "severity": "medium",
+    "description": "The product writes data past the end, or before the beginning, of the intended buffer.",
+    "indicators": [
+      "Out-of-bounds Write",
+      "Memory Corruption"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 22,
+    "status": "Draft",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Memory-Unsafe:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C:LANGUAGE PREVALENCE:Often::LANGUAGE NAME:C++:LANGUAGE PREVALENCE:Often::LANGUAGE CLASS:Assembly:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:ICS/OT:TECHNOLOGY PREVALENCE:Often::",
+    "platform_tags": [
+      "Memory-Unsafe",
+      "C",
+      "C++",
+      "Assembly",
+      "ICS/OT"
+    ]
+  },
+  {
+    "id": "CWE-862",
+    "name": "Missing Authorization",
+    "severity": "medium",
+    "description": "The product does not perform an authorization check when an actor attempts to access a resource or perform an action.",
+    "indicators": [
+      "Missing Authorization",
+      "AuthZ"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 23,
+    "status": "Incomplete",
+    "weakness_abstraction": "Class",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Database Server:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "AI/ML",
+      "Web Server",
+      "Database Server",
+      "Not Technology-Specific"
+    ]
+  },
+  {
+    "id": "CWE-863",
+    "name": "Incorrect Authorization",
+    "severity": "medium",
+    "description": "The product performs an authorization check when an actor attempts to access a resource or perform an action, but it does not correctly perform the check.",
+    "indicators": [
+      "Incorrect Authorization",
+      "AuthZ"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 24,
+    "status": "Incomplete",
+    "weakness_abstraction": "Class",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Database Server:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY CLASS:Not Technology-Specific:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Web Server",
+      "Database Server",
+      "Not Technology-Specific"
+    ]
+  },
+  {
+    "id": "CWE-918",
+    "name": "Server-Side Request Forgery (SSRF)",
+    "severity": "medium",
+    "description": "The web server receives a URL or similar request from an upstream component and retrieves the contents of this URL, but it does not sufficiently ensure that the request is being sent to the expected destination.",
+    "indicators": [
+      "Server-Side Request Forgery (SSRF)",
+      "XSPA",
+      "SSRF"
+    ],
+    "source": "MITRE CWE Top 25",
+    "rank": 25,
+    "status": "Incomplete",
+    "weakness_abstraction": "Base",
+    "applicable_platforms": "::LANGUAGE CLASS:Not Language-Specific:LANGUAGE PREVALENCE:Undetermined::TECHNOLOGY CLASS:Web Based:TECHNOLOGY PREVALENCE:Undetermined::TECHNOLOGY NAME:AI/ML:TECHNOLOGY PREVALENCE:Often::TECHNOLOGY NAME:Web Server:TECHNOLOGY PREVALENCE:Undetermined::",
+    "platform_tags": [
+      "Not Language-Specific",
+      "Web Based",
+      "AI/ML",
+      "Web Server"
+    ]
+  }
+]
