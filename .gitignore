@@ -18,7 +18,9 @@ Desktop.ini
 
 # Project run outputs
 parallel-patch-run/
+parallel-patch-*-run/
 parallel-patch-report/
+parallel-patch-*-report/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
