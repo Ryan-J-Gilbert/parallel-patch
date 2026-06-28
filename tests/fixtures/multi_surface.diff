@@ -1,0 +1,41 @@
+diff --git a/backend/app.py b/backend/app.py
+index 1111111..2222222 100644
+--- a/backend/app.py
++++ b/backend/app.py
+@@ -1,3 +1,8 @@
+ def search(db, term):
++    query = f"SELECT * FROM users WHERE name = '{term}'"
++    return db.execute(query)
+     return None
++
++def load_user(payload):
++    user.__dict__.update(payload)
+diff --git a/web/profile.js b/web/profile.js
+index 3333333..4444444 100644
+--- a/web/profile.js
++++ b/web/profile.js
+@@ -1,3 +1,7 @@
+ export function renderProfile(user) {
++  document.querySelector("#name").innerHTML = user.name;
++  fetch(user.avatarUrl).then((r) => r.text());
+   return user.id;
+ }
+diff --git a/db/migrations/001_add_search.sql b/db/migrations/001_add_search.sql
+new file mode 100644
+index 0000000..5555555
+--- /dev/null
++++ b/db/migrations/001_add_search.sql
+@@ -0,0 +1,3 @@
++CREATE FUNCTION find_user(term text) RETURNS SETOF users AS $$
++  SELECT * FROM users WHERE name = term;
++$$ LANGUAGE SQL;
+diff --git a/native/parser.c b/native/parser.c
+index 6666666..7777777 100644
+--- a/native/parser.c
++++ b/native/parser.c
+@@ -1,3 +1,6 @@
+ void parse(char *input) {
++  char buf[32];
++  strcpy(buf, input);
+ }
+

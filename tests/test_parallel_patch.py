@@ -24,7 +24,9 @@ from scripts.convert_cwe_csv import convert_row, parse_platform_tags
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE_DB = ROOT / "data" / "cwe_top25_sample.json"
+SOFTWARE_DB = ROOT / "data" / "cwe_software_development.json"
 FIXTURE_APP = ROOT / "tests" / "fixtures" / "vulnerable_app"
+MULTI_SURFACE_DIFF = ROOT / "tests" / "fixtures" / "multi_surface.diff"
 
 
 class FailingOnceAdapter(ScanAdapter):
@@ -318,6 +320,40 @@ class ParallelPatchTests(unittest.TestCase):
             self.assertIn("CWE-20", prompt)
             self.assertIn("CWE-915", prompt)
             self.assertNotIn("CWE-120", prompt)
+
+    def test_multi_surface_diff_detects_several_platform_tags(self):
+        sources = ingest_diff(MULTI_SURFACE_DIFF)
+
+        self.assertEqual(
+            ["C", "Database Server", "JavaScript", "Memory-Unsafe", "Python", "SQL", "Web Based"],
+            detect_platform_tags(sources),
+        )
+
+    def test_big_database_prepare_counts_for_multi_surface_diff(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            auto_manifest = prepare_scan(
+                MULTI_SURFACE_DIFF,
+                SOFTWARE_DB,
+                Path(tmp) / "auto",
+                batch_size=10,
+                platform_filter="auto",
+            )
+            specific_manifest = prepare_scan(
+                MULTI_SURFACE_DIFF,
+                SOFTWARE_DB,
+                Path(tmp) / "specific",
+                batch_size=10,
+                platform_filter="specific",
+            )
+
+            self.assertEqual(379, auto_manifest.selected_vulnerabilities)
+            self.assertEqual(38, auto_manifest.total_agents)
+            self.assertEqual(81, specific_manifest.selected_vulnerabilities)
+            self.assertEqual(9, specific_manifest.total_agents)
+            self.assertIn("CWE-89", specific_manifest.batches[0].vulnerability_ids)
+            all_specific_ids = {vuln_id for batch in specific_manifest.batches for vuln_id in batch.vulnerability_ids}
+            self.assertIn("CWE-120", all_specific_ids)
+            self.assertIn("CWE-915", all_specific_ids)
 
 
 if __name__ == "__main__":

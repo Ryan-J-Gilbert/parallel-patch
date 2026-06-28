@@ -1,0 +1,169 @@
+{
+  "scan_id": "f451c2fe-42e0-4a89-a23d-c90374139490",
+  "target": "tests/fixtures/multi_surface.diff",
+  "vulnerability_db": "data/cwe_software_development.json",
+  "batch_size": 10,
+  "total_agents": 9,
+  "total_vulnerabilities": 399,
+  "selected_vulnerabilities": 81,
+  "platform_filter": "specific",
+  "detected_platform_tags": [
+    "C",
+    "Database Server",
+    "JavaScript",
+    "Memory-Unsafe",
+    "Python",
+    "SQL",
+    "Web Based"
+  ],
+  "requested_platform_tags": [],
+  "include_generic_platforms": true,
+  "prompts_dir": "parallel-patch-multi-specific-run/prompts",
+  "results_dir": "parallel-patch-multi-specific-run/results",
+  "batches": [
+    {
+      "agent_id": 0,
+      "vulnerability_ids": [
+        "CWE-79",
+        "CWE-89",
+        "CWE-90",
+        "CWE-120",
+        "CWE-124",
+        "CWE-125",
+        "CWE-128",
+        "CWE-130",
+        "CWE-131",
+        "CWE-134"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-0.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-0.json"
+    },
+    {
+      "agent_id": 1,
+      "vulnerability_ids": [
+        "CWE-135",
+        "CWE-170",
+        "CWE-190",
+        "CWE-191",
+        "CWE-193",
+        "CWE-242",
+        "CWE-243",
+        "CWE-295",
+        "CWE-346",
+        "CWE-364"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-1.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-1.json"
+    },
+    {
+      "agent_id": 2,
+      "vulnerability_ids": [
+        "CWE-366",
+        "CWE-374",
+        "CWE-375",
+        "CWE-396",
+        "CWE-397",
+        "CWE-403",
+        "CWE-425",
+        "CWE-444",
+        "CWE-463",
+        "CWE-464"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-2.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-2.json"
+    },
+    {
+      "agent_id": 3,
+      "vulnerability_ids": [
+        "CWE-466",
+        "CWE-468",
+        "CWE-469",
+        "CWE-472",
+        "CWE-474",
+        "CWE-476",
+        "CWE-478",
+        "CWE-480",
+        "CWE-483",
+        "CWE-484"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-3.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-3.json"
+    },
+    {
+      "agent_id": 4,
+      "vulnerability_ids": [
+        "CWE-497",
+        "CWE-502",
+        "CWE-549",
+        "CWE-551",
+        "CWE-562",
+        "CWE-587",
+        "CWE-601",
+        "CWE-611",
+        "CWE-613",
+        "CWE-617"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-4.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-4.json"
+    },
+    {
+      "agent_id": 5,
+      "vulnerability_ids": [
+        "CWE-618",
+        "CWE-619",
+        "CWE-663",
+        "CWE-676",
+        "CWE-681",
+        "CWE-698",
+        "CWE-733",
+        "CWE-763",
+        "CWE-783",
+        "CWE-786"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-5.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-5.json"
+    },
+    {
+      "agent_id": 6,
+      "vulnerability_ids": [
+        "CWE-787",
+        "CWE-788",
+        "CWE-805",
+        "CWE-807",
+        "CWE-822",
+        "CWE-823",
+        "CWE-824",
+        "CWE-825",
+        "CWE-837",
+        "CWE-839"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-6.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-6.json"
+    },
+    {
+      "agent_id": 7,
+      "vulnerability_ids": [
+        "CWE-843",
+        "CWE-910",
+        "CWE-911",
+        "CWE-915",
+        "CWE-918",
+        "CWE-1007",
+        "CWE-1021",
+        "CWE-1024",
+        "CWE-1073",
+        "CWE-1335"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-7.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-7.json"
+    },
+    {
+      "agent_id": 8,
+      "vulnerability_ids": [
+        "CWE-1341"
+      ],
+      "prompt_path": "parallel-patch-multi-specific-run/prompts/agent-8.md",
+      "result_path": "parallel-patch-multi-specific-run/results/agent-8.json"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "scan_id": "f451c2fe-42e0-4a89-a23d-c90374139490",
+  "target": "tests/fixtures/multi_surface.diff",
+  "timestamp": "2026-06-28T19:07:08.696701+00:00",
+  "total_agents": 9,
+  "failed_agents": 0,
+  "findings": [
+    {
+      "vulnerability_id": "CWE-89",
+      "vulnerability_name": "SQL Injection",
+      "file": "backend/app.py",
+      "line_start": 2,
+      "line_end": 2,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "The SQL query is built by interpolating term directly into the statement, allowing attacker-controlled input to alter the query syntax.",
+      "suggested_fix": "Use parameterized queries or prepared statements and bind term as a value instead of concatenating it into SQL."
+    },
+    {
+      "vulnerability_id": "CWE-915",
+      "vulnerability_name": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "file": "backend/app.py",
+      "line_start": 7,
+      "line_end": 7,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "The payload is applied directly to user.__dict__, allowing upstream input to modify arbitrary object attributes, including internal or security-sensitive fields.",
+      "suggested_fix": "Only copy explicitly allowed fields from the payload into the user object and reject or ignore all other attributes."
+    },
+    {
+      "vulnerability_id": "CWE-120",
+      "vulnerability_name": "Classic Buffer Overflow",
+      "file": "native/parser.c",
+      "line_start": 3,
+      "line_end": 3,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "strcpy copies input into a fixed 32-byte buffer without checking the input length, which can overflow buf.",
+      "suggested_fix": "Validate the input length before copying or use a bounded copy routine that preserves null termination and rejects oversized input."
+    },
+    {
+      "vulnerability_id": "CWE-242",
+      "vulnerability_name": "Use of Inherently Dangerous Function",
+      "file": "native/parser.c",
+      "line_start": 3,
+      "line_end": 3,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "The code copies attacker-controlled input into a fixed-size stack buffer with strcpy(), which performs no bounds checking and can overflow the destination.",
+      "suggested_fix": "Replace strcpy() with a bounded copy that uses the destination buffer size and guarantees null termination, or validate the input length before copying."
+    },
+    {
+      "vulnerability_id": "CWE-676",
+      "vulnerability_name": "Use of Potentially Dangerous Function",
+      "file": "native/parser.c",
+      "line_start": 3,
+      "line_end": 3,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "The parser copies attacker-controlled input with strcpy, a potentially dangerous function that performs no bounds checking and can overflow the fixed-size buffer.",
+      "suggested_fix": "Use a bounded copy or length-checked parsing routine and ensure the destination buffer is always null-terminated."
+    },
+    {
+      "vulnerability_id": "CWE-787",
+      "vulnerability_name": "Out-of-bounds Write",
+      "file": "native/parser.c",
+      "line_start": 3,
+      "line_end": 3,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "Unbounded strcpy copies attacker-controlled input into a fixed 32-byte stack buffer, which can write past the end of the buffer when input is longer than the destination.",
+      "suggested_fix": "Bound the copy to the size of the destination buffer and ensure null termination, or validate input length before copying."
+    },
+    {
+      "vulnerability_id": "CWE-79",
+      "vulnerability_name": "Cross-site Scripting",
+      "file": "web/profile.js",
+      "line_start": 2,
+      "line_end": 2,
+      "severity": "medium",
+      "confidence": "high",
+      "description": "User-controlled name data is assigned to innerHTML, so HTML or script content in the value can execute in the page.",
+      "suggested_fix": "Assign untrusted text with textContent or sanitize the value with a trusted HTML sanitizer before inserting it as markup."
+    }
+  ],
+  "summary": null
+}

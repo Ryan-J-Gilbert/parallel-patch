@@ -1,0 +1,13 @@
+[
+  {
+    "vulnerability_id": "CWE-242",
+    "vulnerability_name": "Use of Inherently Dangerous Function",
+    "file": "native/parser.c",
+    "line_start": 3,
+    "line_end": 3,
+    "severity": "medium",
+    "confidence": "high",
+    "description": "The code copies attacker-controlled input into a fixed-size stack buffer with strcpy(), which performs no bounds checking and can overflow the destination.",
+    "suggested_fix": "Replace strcpy() with a bounded copy that uses the destination buffer size and guarantees null termination, or validate the input length before copying."
+  }
+]
